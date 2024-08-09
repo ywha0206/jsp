@@ -1,19 +1,20 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-<%@page import="user1.User1VO"%>
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
+<%@page import="java.util.ArrayList"%>
+<%@page import="user1.User3VO"%>
+<%@page import="java.util.List"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%
 	//데이터베이스 처리
 	String host = "jdbc:mysql://127.0.0.1:3306/studydb";
 	String user = "root";
 	String pass = "1234";
 	
-	List<User1VO> users = new ArrayList<>();
+	List<User3VO> users = new ArrayList<>();
 	
 
 	try{
@@ -27,17 +28,17 @@
 		Statement stmt = conn.createStatement();
 		
 		//4단계 SQL 실행
-		String sql = "select * from `user1`";
+		String sql = "select * from `user3`";
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		//5단계 결과 처리
 		while(rs.next()){
-			User1VO vo = new User1VO(); //vo생성해서 vo 초기화
+			User3VO vo = new User3VO(); //vo생성해서 vo 초기화
 			vo.setUid(rs.getString(1));
 			vo.setName(rs.getString(2));
 			vo.setBirth(rs.getString(3));
 			vo.setHp(rs.getString(4));
-			vo.setAge(rs.getInt(5));
+			vo.setAddr(rs.getString(5));
 			
 			users.add(vo);
 		}
@@ -50,13 +51,13 @@
 		e.printStackTrace();
 	}
 
-
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User1::list</title>
+<title>User3::list</title>
 <script>
 	window.onload = function(){
 		
@@ -71,8 +72,6 @@
 				
 				if(!result){
 					e.preventDefault();
-					//return;
-					
 				}
 			
 			}
@@ -81,9 +80,9 @@
 </script>
 </head>
 <body>
-	<h3>User1 목록</h3>
+	<h3>User3 목록</h3>
 	<a href="/ch06/1.JDBCTest.jsp">처음으로</a>
-	<a href="/ch06/user1/register.jsp">등록</a>
+	<a href="/ch06/user3/register.jsp">등록</a>
 	
 	<table border="1">
 		<tr>
@@ -91,20 +90,20 @@
 			<th>이름</th>
 			<th>생년월일</th>
 			<th>휴대폰</th>
-			<th>나이</th>
+			<th>주소</th>
 			<th>관리</th>
 		</tr>
 		
-		<% for(User1VO vo : users){ %>
+		<% for(User3VO vo : users){ %>
 		<tr>
 			<td><%= vo.getUid() %></td>
 			<td><%= vo.getName() %></td>
 			<td><%= vo.getBirth() %></td>
 			<td><%= vo.getHp() %></td>
-			<td><%= vo.getAge() %></td>
+			<td><%= vo.getAddr() %></td>
 			<td>
-				<a href="/ch06/user1/modify.jsp?uid=<%= vo.getUid() %>">수정</a>
-				<a href="/ch06/user1/remove.jsp?uid=<%= vo.getUid() %>" class="del">삭제</a>
+				<a href="/ch06/user3/modify.jsp?uid=<%= vo.getUid() %>">수정</a>
+				<a href="/ch06/user3/remove.jsp?uid=<%= vo.getUid() %>" class="del">삭제</a>
 			</td>
 		</tr>
 		<%} %>

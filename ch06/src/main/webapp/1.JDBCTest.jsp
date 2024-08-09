@@ -12,6 +12,10 @@
 </head>
 <body>
 	<h3>1.JDBC</h3>
-	<a href="/ch06/user1/list.jsp">User1</a> <!-- 절대 경로 /ch06~ -->
+	<a href="/ch06/user1/list.jsp">User1</a><br> 
+	<a href="/ch06/user2/list2.jsp">User2</a><br> 
+	<a href="/ch06/user3/list.jsp">User3</a><br> 
+	<a href="/ch06/user4/list.jsp">User4</a><br> 
+	<a href="/ch06/user5/list.jsp">User5</a><br>
 </body>
 </html>

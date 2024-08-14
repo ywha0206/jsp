@@ -19,33 +19,20 @@
 					for(const user of data){
 						
 						console.log(user.uid)
-						
-						let row = "<tr>";
-							row +="<td>"+user.uid+"</td>";
-							row +="<td>"+user.name+"</td>";
-							row +="<td>"+user.birth+"</td>";
-							row +="<td>"+user.hp+"</td>";
-							row +="<td>"+user.age+"</td>";
-							row +="<td>";
-							row +="<a href='#'>수정</a>";
-							row +="<a href='#'>삭제</a>";
-							row +="</td>";
-							row +="</tr>";
 							
-						const row2 =`<tr>
+						const row =`<tr>
 										<td>\${user.uid}</td>
 										<td>\${user.name}</td>
 										<td>\${user.birth}</td>
-										<td>\${user.hp}</td>
-										<td>\${user.age}</td>
+										<td>\${user.addr}</td>
 										<td>
 											<a href='#' class="modify">수정</a>
 											<a href='#' class="delete">삭제</a>
 										</td>
-									</tr>`
+									</tr>`;
 						
 						
-						table.insertAdjacentHTML('beforeend', row2);
+						table.insertAdjacentHTML('beforeend', row);
 					}
 				})
 				.catch(err => {
@@ -102,7 +89,7 @@
 </head>
 <body>
 	
-	<h3>ajax user1 목록</h3>
+	<h3>ajax user2 목록</h3>
 	
 	<a href="/ch06/3.AJAXTest.jsp">처음으로</a>
 	<a href="./register.jsp">등록하기</a>
@@ -111,8 +98,7 @@
 			<th>아이디</th>
 			<th>이름</th>
 			<th>생년월일</th>
-			<th>휴대폰</th>
-			<th>나이</th>
+			<th>주소</th>
 			<th>관리</th>
 		</tr>
 	</table>

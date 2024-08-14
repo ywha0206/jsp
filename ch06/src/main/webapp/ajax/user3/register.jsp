@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>ajax::user1</title>
+	<title>ajax::user2</title>
 	<script>
 	
 	window.onload = function(){
@@ -19,14 +19,14 @@
 			const name = formUser.name.value;
 			const birth = formUser.birth.value;
 			const hp = formUser.hp.value;
-			const age = formUser.age.value;
+			const addr = formUser.addr.value;
 			
 			const jsonData = {
 				"uid":uid,
 				"name":name,
 				"birth":birth,
 				"hp":hp,
-				"age":age
+				"addr":addr
 			};
 			
 			console.log(jsonData);
@@ -65,7 +65,7 @@
 	</script>
 </head>
 <body>
-	<h3>ajax user1 등록</h3>
+	<h3>ajax user3 등록</h3>
 	<a href="./list.jsp">목록이동</a>
 	<form action="#" method="post">
 		<table border="1">
@@ -86,8 +86,8 @@
 				<td><input type="text" name="hp"/> </td>
 			</tr>
 			<tr>
-				<td>나이</td>
-				<td><input type="number" name="age"/> </td>
+				<td>주소</td>
+				<td><input type="text" name="addr"/> </td>
 			</tr>
 			<tr>
 				<td colspan="2" align="right">

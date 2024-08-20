@@ -41,18 +41,20 @@ public class RegisterController extends HttpServlet {
 		String zip = req.getParameter("zip");
 		String addr1 = req.getParameter("addr1");
 		String addr2 = req.getParameter("addr2");
+		String regip = req.getRemoteAddr();
 	
 		//dto생성
 		UserDto userDto = new UserDto();
 		userDto.setUid(uid);
-		userDto.setPass(uid);
-		userDto.setName(uid);
-		userDto.setNick(uid);
-		userDto.setEmail(uid);
-		userDto.setHp(uid);
-		userDto.setZip(uid);
-		userDto.setAddr1(uid);
-		userDto.setAddr2(uid);
+		userDto.setPass(pass);
+		userDto.setName(name);
+		userDto.setNick(nick);
+		userDto.setEmail(email);
+		userDto.setHp(hp);
+		userDto.setZip(zip);
+		userDto.setAddr1(addr1);
+		userDto.setAddr2(addr2);
+		userDto.setRegip(regip);
 		
 		service.insertUser(userDto);
 		

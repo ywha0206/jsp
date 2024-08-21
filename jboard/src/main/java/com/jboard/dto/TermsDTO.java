@@ -1,4 +1,4 @@
-package dto;
+package com.jboard.dto;
 
 public class TermsDTO {
 	private String terms;

@@ -1,4 +1,4 @@
-package service;
+package com.jboard.service;
 
 import java.util.List;
 import java.util.Properties;
@@ -12,9 +12,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import dao.TermsDAO;
-import dao.UserDao;
-import dto.UserDto;
+import com.jboard.dao.TermsDAO;
+import com.jboard.dao.UserDao;
+import com.jboard.dto.UserDto;
 
 public class UserService {
 	
@@ -86,8 +86,8 @@ public class UserService {
 	public void insertUser(UserDto dto) {
 		dao.insertUser(dto);
 	}
-	public UserDto selectUser(String uid) {
-		return dao.selectUser(uid);
+	public UserDto selectUser(String uid, String pass) {
+		return dao.selectUser(uid, pass);
 	}
 	public List<UserDto> selectUsers() {
 		return dao.selectUsers();

@@ -1,4 +1,4 @@
-package dto;
+package com.jboard.dto;
 
 public class UserDto {
 	private String uid;

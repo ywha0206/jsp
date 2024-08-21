@@ -1,4 +1,4 @@
-package dao;
+package com.jboard.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.jboard.dto.TermsDTO;
+import com.jboard.util.DBHelper;
 import com.jboard.util.SQL;
-
-import dto.TermsDTO;
-import util.DBHelper;
 
 public class TermsDAO extends DBHelper{
 	

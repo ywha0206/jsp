@@ -2,14 +2,15 @@ package com.jboard.controller.user;
 
 import java.io.IOException;
 
-import dto.UserDto;
+import com.jboard.dto.UserDto;
+import com.jboard.service.UserService;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.UserService;
 
 @WebServlet("/user/register.do")
 public class RegisterController extends HttpServlet {

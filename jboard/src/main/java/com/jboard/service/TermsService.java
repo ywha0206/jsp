@@ -1,9 +1,9 @@
-package service;
+package com.jboard.service;
 
 import java.util.List;
 
-import dao.TermsDAO;
-import dto.TermsDTO;
+import com.jboard.dao.TermsDAO;
+import com.jboard.dto.TermsDTO;
 
 public class TermsService {
 	// 열거타입으로 싱글톤 생성

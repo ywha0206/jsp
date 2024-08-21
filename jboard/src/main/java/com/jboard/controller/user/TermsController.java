@@ -6,14 +6,15 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.TermsDTO;
+import com.jboard.dto.TermsDTO;
+import com.jboard.service.TermsService;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.TermsService;
 
 @WebServlet("/user/terms.do")
 public class TermsController extends HttpServlet {

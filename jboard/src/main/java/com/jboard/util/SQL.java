@@ -27,35 +27,36 @@ public class SQL {
 	
 	//article
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
-
-	
 	public static final String INSERT_ARTICLE = "insert into `article` set "
-											//+ "`cate`=?,"
 											+ "`title`=?,"
 											+ "`content`=?,"
 											+ "`file`=?,"
-											/*
-											+ "`comment`=?,"
-											+ "`hit`=?,"
-											*/
 											+ "`writer`=?,"
 											+ "`regip`=?,"
 											+ "`rDate`=NOW()";
 
-	public static final String SELECT_ARTICLE = "select * from `article` where `writer` = ? ";
-	public static final String SELECT_ARTICLES = "select * from `article` where `writer` = ? ";
-
-
-
-	//file
+	public static final String SELECT_ARTICLES = "SELECT a.*, b.nick  from `article` AS a "
+											+ "JOIN `user` AS b ON a.writer = b.uid "
+											+ "ORDER BY `no` DESC "
+											+ "LIMIT ?, 10";
 	
-	public static final String INSERT_FILE = "insert into `file` set "
+	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM `article`";
+	public static final String SELECT_ARTICLE = "SELECT * FROM `article` AS a "
+											+"LEFT JOIN `file` AS b ON a.`no`= b.ano "
+											+"WHERE `no` = ?";
+	
+	
+	// file
+	public static final String SELECT_FILE = "select * from file where fno=?";
+	public static final String INSERT_FILE = "insert into file set "
 											+ "`ano`=?,"
 											+ "`oName`=?,"
 											+ "`sName`=?,"
 											+ "`rdate`=NOW()";
+	
 
-
+	public static final String UPDATE_FILE_DOWNLOAD_COUNT = "update file set `download` = `download` + 1 where `fno`=?";
+	
 
 
 

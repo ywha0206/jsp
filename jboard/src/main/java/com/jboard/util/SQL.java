@@ -45,9 +45,29 @@ public class SQL {
 											+"LEFT JOIN `file` AS b ON a.`no`= b.ano "
 											+"WHERE `no` = ?";
 	
+	//comment
+	
+	public static final String SELECT_COMMENT = "select * from `comment` where `no`=?";
+			
+	public static final String SELECT_COMMENTS = "select a.*, b.nick from `comment` as a "
+											+ "join `user` as b on a.writer = b.uid "
+											+ "where `parent`=? "
+											+ "order by no";
+	
+	public static final String INSERT_COMMENT = "insert into `comment` set "
+											+ "`parent`=?, "
+											+ "`content`=?, "
+											+ "`writer`=?, "
+											+ "`regip`=?, "
+											+ "`rdate`= now()";
+	
+	public static final String UPDATE_COMMENT = "update `comment` set `content`=? where `no`=?";
+	
+	public static final String DELETE_COMMENT = "delete from `comment` where `no`=?";
 	
 	// file
 	public static final String SELECT_FILE = "select * from file where fno=?";
+	
 	public static final String INSERT_FILE = "insert into file set "
 											+ "`ano`=?,"
 											+ "`oName`=?,"

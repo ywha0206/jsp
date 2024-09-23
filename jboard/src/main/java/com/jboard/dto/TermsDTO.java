@@ -3,6 +3,7 @@ package com.jboard.dto;
 public class TermsDTO {
 	private String terms;
 	private String privacy;
+	
 	public String getTerms() {
 		return terms;
 	}

@@ -34,8 +34,6 @@ public class UserService {
 		//인증코드 생성
 		int code = ThreadLocalRandom.current().nextInt(100000,1000000);
 		
-		
-		
 		//이메일 기본 정보
 		String title = "jboard 인증번호입니다.";
 		String content = "<h3> 인증 코드는 <h1>"+ code +"</h1> 입니다.</h3>";

@@ -39,6 +39,7 @@ public class TermsDAO extends DBHelper{
 					dto.setTerms(rs.getString(1));
 					dto.setPrivacy(rs.getString(2));
 				}
+				logger.debug("terms dto : "+dto.toString());
 				closeAll();
 			}catch (Exception e) {
 				logger.error(e.getMessage());

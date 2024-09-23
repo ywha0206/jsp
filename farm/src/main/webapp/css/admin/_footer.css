@@ -1,0 +1,20 @@
+  
+        /************************ Footer ************************/
+        footer{
+            position: absolute;
+            width: 980px;
+            height: 39px;
+            left: 470px;
+            right: 470px;
+            top: 704px;
+
+            background: #353535;
+        }
+
+        .copyright{
+            float: left;
+            margin-top: 8px;
+            color: white;
+            font-size: 15px;
+            
+        }
